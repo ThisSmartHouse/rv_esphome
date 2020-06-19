@@ -1,0 +1,5 @@
+substitutions:
+  device_name: freshtankmeter
+  pretty_name: "Fresh"
+
+<<: !include ./devices/d1_mini/tank-level-meter.yaml

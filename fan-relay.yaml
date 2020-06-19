@@ -1,0 +1,5 @@
+substitutions:
+  device_name: rvfanlight
+  pretty_name: "Fan Light"
+
+<<: !include ./devices/esp-01/relay.yaml

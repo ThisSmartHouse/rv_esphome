@@ -1,0 +1,5 @@
+substitutions:
+  device_name: blacktankmeter
+  pretty_name: "Black"
+
+<<: !include ./devices/d1_mini/tank-level-meter.yaml
