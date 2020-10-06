@@ -1,0 +1,8 @@
+substitutions:
+  device_name: stove_light
+  pretty_name: "Stove Light"
+  status_led: GPIO2
+  restore_mode: RESTORE_DEFAULT_ON
+  ip_address: 10.2.1.55
+
+<<: !include ../devices/esp-01/relay-static.yaml

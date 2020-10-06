@@ -1,0 +1,8 @@
+substitutions:
+  device_name: kitchen_sink_light
+  pretty_name: "Kitchen Sink Light"
+  status_led: GPIO2
+  restore_mode: RESTORE_DEFAULT_ON
+  ip_address: 10.2.1.52
+
+<<: !include ../devices/esp-01/relay-static.yaml

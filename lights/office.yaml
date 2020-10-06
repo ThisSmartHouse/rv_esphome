@@ -1,0 +1,8 @@
+substitutions:
+  device_name: office_light
+  pretty_name: "Office Light"
+  status_led: GPIO2
+  restore_mode: RESTORE_DEFAULT_ON
+  ip_address: 10.2.1.53
+
+<<: !include ../devices/esp-01/relay-static.yaml
