@@ -1,0 +1,23 @@
+esphome:
+  name: $device_name
+  platform: ESP8266
+  board: d1_mini
+  build_path: "./build/${device_name}"
+
+<<: !include ../../common/standard-static.yaml
+<<: !include ../../common/sensor/standard.yaml
+<<: !include ../../common/text_sensor/standard.yaml
+<<: !include ./standard.yaml
+
+binary_sensor:
+  - platform: gpio
+    device_class: power
+    pin:
+      number: D6
+    name: "${pretty_name}"
+    filters:
+      - invert:
+      - delayed_on: 200ms
+      - delayed_off: 200ms
+      - delayed_on_off: 1000ms
+
