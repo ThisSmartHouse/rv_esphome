@@ -1,5 +1,6 @@
 substitutions:
   device_name: rvfanlight
   pretty_name: "Fan Light"
+  status_led: GPIO1
 
 <<: !include ./devices/esp-01/relay.yaml
