@@ -1,0 +1,6 @@
+substitutions:
+  device_name: doorlight
+  pretty_name: "Door Light"
+  status_led: GPIO1
+
+<<: !include ./devices/esp-01/relay.yaml
