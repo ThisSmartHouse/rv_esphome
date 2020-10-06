@@ -1,0 +1,8 @@
+substitutions:
+  device_name: water_pipe_heat
+  pretty_name: "Water Pipe Heat"
+  status_led: GPIO2
+  restore_mode: RESTORE_DEFAULT_OFF
+  ip_address: 10.2.1.66
+
+<<: !include ../devices/esp-01/relay-static.yaml

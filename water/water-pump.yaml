@@ -1,0 +1,8 @@
+substitutions:
+  device_name: water_pump
+  pretty_name: "Water Pump"
+  status_led: GPIO0
+  restore_mode: RESTORE_DEFAULT_OFF
+  ip_address: 10.2.1.65
+
+<<: !include ../devices/esp-01/relay-static.yaml

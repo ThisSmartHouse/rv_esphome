@@ -1,0 +1,6 @@
+substitutions:
+  device_name: freshtankmeter
+  pretty_name: "Fresh"
+  ip_address: 10.2.1.64
+
+<<: !include ../devices/d1_mini/tank-level-meter-static.yaml
