@@ -1,0 +1,6 @@
+substitutions:
+  device_name: ac_50a_1
+  pretty_name: "A/C 50A L1"
+  ip_address: 10.2.1.59
+
+<<: !include ../devices/d1_mini/ac-sensor-static.yaml
