@@ -9,16 +9,12 @@ esphome:
   platformio_options:
       board_build.flash_mode: dout
 
-<<: !include ../../common/standard.yaml
+<<: !include ../../common/standard-static.yaml
 <<: !include ../../common/sensor/standard.yaml
 <<: !include ../../common/text_sensor/standard.yaml
 
-status_led:
-  pin: "${status_led}"
-
-binary_sensor:
-  - platform: status
-    name: "${pretty_name} Status"
+#status_led:
+#  pin: "${status_led}"
 
 switch:
   - platform: gpio
