@@ -1,8 +1,6 @@
 substitutions:
   device_name: bathroom_light
   pretty_name: "Bathroom Light"
-  status_led: GPIO2
-  restore_mode: RESTORE_DEFAULT_ON
   ip_address: 10.2.1.54
 
-<<: !include ../devices/esp-01/relay-static.yaml
+<<: !include ../devices/esp-01/2-relay-static.yaml
