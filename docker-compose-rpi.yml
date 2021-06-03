@@ -1,0 +1,14 @@
+esphome:
+  container_name: esphome
+  net: 'host'
+  restart: always
+  user: 0:0
+  environment:
+    - HOME = "/"
+  image: esphome/esphome-armv7:1.13.2
+  ports:
+    - 0.0.0.0:6052:6052
+    - 0.0.0.0:6123:6123
+  volumes:
+    - /home/pi/rv_esphome:rw
+  command: rv_esphome/ dashboard

@@ -2,7 +2,7 @@
 substitutions:
   device_name: air_conditioner
   pretty_name: "Air Conditioner"
-  restore_mode: ALWAYS_OFF
+  restore_mode: ALWAYS_ON
   ip_address: 10.11.12.51
 
 esphome:
