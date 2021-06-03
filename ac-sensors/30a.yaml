@@ -1,6 +1,6 @@
 substitutions:
   device_name: ac_30a
   pretty_name: "A/C 30A"
-  ip_address: 10.2.1.60
+  ip_address: 10.11.12.53
 
 <<: !include ../devices/d1_mini/ac-sensor-static.yaml

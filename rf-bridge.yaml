@@ -1,0 +1,6 @@
+substitutions:
+  device_name: rf_bridge
+  pretty_name: "RF Bridge"
+  ip_address: 10.11.12.50
+
+<<: !include ./devices/sonoff/rf-bridge.yaml

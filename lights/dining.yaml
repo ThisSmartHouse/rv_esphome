@@ -2,7 +2,7 @@ substitutions:
   device_name: dining_light
   pretty_name: "Dining Light"
   status_led: GPIO0
-  restore_mode: RESTORE_DEFAULT_ON
-  ip_address: 10.2.1.57
+  restore_mode: ALWAYS_ON
+  ip_address: 10.11.12.43
 
 <<: !include ../devices/esp-01/relay-static.yaml

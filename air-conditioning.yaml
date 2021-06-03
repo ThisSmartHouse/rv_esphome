@@ -1,0 +1,61 @@
+
+substitutions:
+  device_name: air_conditioner
+  pretty_name: "Air Conditioner"
+  restore_mode: ALWAYS_OFF
+  ip_address: 10.11.12.51
+
+esphome:
+  name: $device_name
+  platform: ESP8266
+  board: esp01_1m
+  build_path: "./build/${device_name}"
+
+<<: !include ./common/wifi-static.yaml
+<<: !include ./common/captive_portal.yaml
+<<: !include ./common/api.yaml
+<<: !include ./common/ota.yaml
+<<: !include ./common/text_sensor/standard.yaml
+
+status_led:
+  pin: GPIO13
+
+switch:
+  - platform: gpio
+    name: "${pretty_name} CH 1"
+    pin: GPIO12
+    id: relay1
+    restore_mode: "${restore_mode}"
+    on_turn_on:
+      then:
+        - delay: 2h
+        - switch.turn_off: relay1
+
+  - platform: restart
+    name: "${pretty_name} Restart"
+
+logger:
+
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: GPIO0
+      mode: INPUT_PULLUP
+      inverted: false
+    name: "${pretty_name} Button"
+    on_press:
+      - switch.toggle: relay1
+  - platform: status
+    name: "${pretty_name} Status"
+
+sensor:
+  - !include ./common/sensor/uptime.yaml
+  - !include ./common/sensor/wifi_signal.yaml
+  - platform: dht
+    model: SI7021
+    pin: GPIO14
+    humidity:
+      name: "Indoor Humidity"
+    temperature:
+      name: "Indoor Temperature"
+    update_interval: 10s

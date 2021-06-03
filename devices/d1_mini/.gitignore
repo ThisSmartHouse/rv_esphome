@@ -2,12 +2,9 @@
 # This is an example and may include too much for your use-case.
 # You can modify this file to suit your needs.
 /.esphome/
-**/temp.yaml
 **/.pioenvs/
 **/.piolibdeps/
 **/lib/
 **/src/
-**/build/
 **/platformio.ini
 /secrets.yaml
-**/.DS_Store

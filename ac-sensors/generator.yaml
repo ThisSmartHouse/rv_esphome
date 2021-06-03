@@ -1,6 +1,6 @@
 substitutions:
   device_name: generator_power
   pretty_name: "A/C Generator"
-  ip_address: 10.2.1.61
+  ip_address: 10.11.12.54
 
 <<: !include ../devices/d1_mini/ac-sensor-static.yaml

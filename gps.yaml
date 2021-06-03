@@ -1,0 +1,34 @@
+<<: !include ./common/wifi-static.yaml
+<<: !include ./common/captive_portal.yaml
+<<: !include ./common/api.yaml
+<<: !include ./common/ota.yaml
+<<: !include ./common/sensor/standard.yaml
+<<: !include ./common/text_sensor/standard.yaml
+<<: !include ./common/standard.yaml
+
+substitutions:
+  device_name: gps
+  pretty_name: "GPS"
+  ip_address: 10.11.12.56
+
+esphome:
+  name: $device_name
+  platform: ESP8266
+  board: d1_mini
+  build_path: "./build/${device_name}"
+
+logger:
+  level: DEBUG
+
+uart:
+  rx_pin: 14
+  tx_pin: 12
+  baud_rate: 115200
+  id: a9g_uart
+
+a9g:
+  uart_id: a9g_uart
+  latitude:
+    name: "RV Latitude"
+  longitude:
+    name: "RV Longitude"

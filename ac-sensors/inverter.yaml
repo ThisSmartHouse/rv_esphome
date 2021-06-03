@@ -1,6 +1,6 @@
 substitutions:
   device_name: ac_inverter
   pretty_name: "A/C Inverter"
-  ip_address: 10.2.1.58
+  ip_address: 10.11.12.55
 
 <<: !include ../devices/d1_mini/ac-sensor-static.yaml

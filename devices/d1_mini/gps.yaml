@@ -1,0 +1,60 @@
+<<: !include ../../common/wifi-static.yaml
+<<: !include ../../common/captive_portal.yaml
+<<: !include ../../common/api.yaml
+<<: !include ../../common/ota.yaml
+<<: !include ../../common/sensor/standard.yaml
+<<: !include ../../common/text_sensor/standard.yaml
+<<: !include ./standard.yaml
+
+esphome:
+  name: $device_name
+  platform: ESP8266
+  board: d1_mini
+  build_path: "./build/${device_name}"
+#   on_boot:
+#     priority: -100
+#     then:
+#       - logger.log: "Turning Off A9G..."
+#       - switch.turn_off: A9G_ON
+#       - delay: 3s
+#       - logger.log: "Turning On A9G..."
+#       - switch.turn_on: A9G_ON
+#       - delay: 5s
+#       - logger.log: "A9G Enabled..."
+#   on_loop:
+#     then:
+#       - logger.log: "Writing AT Commands..."
+#       - uart.write: "AT+GPS=1\r\n"
+#       - delay: 2s
+#       - uart.write: "AT+GPSRD=1\r\n"
+#       - delay: 1s
+#       - logger.log: "AT Commands sent!"
+
+# switch:
+#   - platform: gpio
+#     pin: 16 
+#     id: A9G_ON
+#     restore_mode: ALWAYS_ON
+#   - platform: gpio
+#     pin: 15
+#     id: A9G_OFF
+#     restore_mode: ALWAYS_OFF
+#   - platform: gpio
+#     pin: 13
+#     id: A9G_WAKE
+#   - platform: gpio
+#     pin: 2
+#     id: A9G_LOWPOWER
+#     restore_mode: ALWAYS_ON
+
+logger:
+  level: DEBUG
+  baud_rate: 0
+
+uart:
+  rx_pin: 14
+  tx_pin: 12
+  baud_rate: 115200
+
+time:
+  - platform: gps

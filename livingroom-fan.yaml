@@ -1,0 +1,8 @@
+substitutions:
+  device_name: living_room_fan
+  pretty_name: "Living Room Fan"
+  status_led: GPIO1
+  restore_mode: RESTORE_DEFAULT_OFF
+  ip_address: 10.11.12.46
+
+<<: !include ./devices/esp-01/relay-static.yaml

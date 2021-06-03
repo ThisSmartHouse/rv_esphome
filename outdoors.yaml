@@ -1,0 +1,6 @@
+substitutions:
+  device_name: outdoors
+  pretty_name: "Outdoors"
+  ip_address: 10.2.1.70  
+
+<<: !include ./devices/esp-01/dht22.yaml
