@@ -1,7 +1,23 @@
 # This is for a LC Technology (www.lctech.cc) 2-channel relay
 # with ESP-01 driver
 # https://smile.amazon.com/gp/product/B07WS7D9K1
+#
+# First relay: 
+# ON: a0 01 01 a2 
+# OFF: a0 01 00 a1 
+#
+# Second relay: 
+# ON: a0 02 01 a3 
+# OFF: a0 02 00 a2 
+#
+# Third relay: 
+# ON: a0 03 01 a4  
+# OFF: a0 03 00 a3  
 
+# Fourth relay: 
+# ON: a0 04 01 a5 
+# OFF: a0 04 00 a4
+ 
 esphome:
   name: $device_name
   platform: ESP8266
@@ -30,10 +46,10 @@ switch:
     name: "${pretty_name} CH 1"
     turn_on_action:
       - logger.log: "Sending ON sequence for CH1..."
-      - uart.write: [0xA0, 0x01, 0x01, 0xA2]
+      - uart.write: [0x0D, 0x0A, 0x2B, 0x49, 0x50, 0x44, 0x2C, 0x30, 0x2C, 0x34, 0x3A, 0xA0, 0x01, 0x01, 0xA2]
     turn_off_action:
-      - logger.log: "Sending OFF sequence for CH2..."
-      - uart.write: [0xA0, 0x01, 0x00, 0xA1]
+      - logger.log: "Sending OFF sequence for CH1..."
+      - uart.write: [0x0D, 0x0A, 0x2B, 0x49, 0x50, 0x44, 0x2C, 0x30, 0x2C, 0x34, 0x3A, 0xA0, 0x01, 0x00, 0xA1]
     optimistic: true
    
   - platform: template
@@ -41,8 +57,14 @@ switch:
     turn_on_action:
       - logger.log: "Sending ON sequence for CH2..."
       - uart.write: [0xA0, 0x02, 0x01, 0xA3]
+      - uart.write: [0xA0, 0x02, 0x01, 0xA3]
+      - uart.write: [0xA0, 0x02, 0x01, 0xA3]
+      - uart.write: [0xA0, 0x02, 0x01, 0xA3]
     turn_off_action:
       - logger.log: "Sending OFF sequence CH2..."
+      - uart.write: [0xA0, 0x02, 0x00, 0xA2]
+      - uart.write: [0xA0, 0x02, 0x00, 0xA2]
+      - uart.write: [0xA0, 0x02, 0x00, 0xA2]
       - uart.write: [0xA0, 0x02, 0x00, 0xA2]
     optimistic: true
 

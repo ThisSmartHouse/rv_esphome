@@ -26,11 +26,6 @@ switch:
     pin: GPIO12
     id: relay1
     restore_mode: "${restore_mode}"
-    on_turn_on:
-      then:
-        - delay: 2h
-        - switch.turn_off: relay1
-
   - platform: restart
     name: "${pretty_name} Restart"
 

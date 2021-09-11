@@ -1,6 +1,6 @@
 substitutions:
-  device_name: bathroom_light
-  pretty_name: "Bathroom Light"
+  device_name: bathroom_lights
+  pretty_name: "Bathroom Lights"
   ip_address: 10.11.12.42
 
 <<: !include ../devices/esp-01/2-relay-static.yaml

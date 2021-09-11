@@ -3,6 +3,6 @@ substitutions:
   pretty_name: "Freshwater Fill Valve"
   status_led: GPIO0
   restore_mode: RESTORE_DEFAULT_OFF
-  ip_address: 10.2.1.63
+  ip_address: 10.11.12.63
 
 <<: !include ../devices/esp-01/relay-static.yaml
